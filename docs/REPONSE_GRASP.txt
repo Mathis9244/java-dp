@@ -1,0 +1,16 @@
+Réponses TP GRASP (réservations)
+
+1) Information Expert
+   - Reservation.calculerTotal(TypeReservation) : la réservation possède nbPlaces et le client.
+
+2) Pure Fabrication
+   - ConvertisseurDate : spécialiste des conversions String -> LocalDateTime.
+
+3) Contrôleur
+   - ReservationController : coordonne uniquement la création de la réservation.
+
+4) Faible couplage
+   - Le contrôleur ne connaît plus le format de date ni la formule de réduction.
+
+5) Tests
+   - mvn test (package org.sebsy.grasps)

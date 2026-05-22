@@ -6,6 +6,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.time.LocalDateTime;
 
+/**
+ * Information Expert : calcule le montant total de la réservation.
+ */
+
 @Entity
 public class Reservation {
 
@@ -101,5 +105,14 @@ public class Reservation {
      */
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public void calculerTotal(TypeReservation type) {
+        double montant = type.getMontant() * nbPlaces;
+        if (client.isPremium()) {
+            total = montant * (1 - type.getReductionPourcent() / 100.0);
+        } else {
+            total = montant;
+        }
     }
 }

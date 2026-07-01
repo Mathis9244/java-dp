@@ -4,7 +4,7 @@ public class TriInsertion implements AlgorithmeTri {
 
 	@Override
 	public void trier(Integer[] arr) {
-		for (int k = 1; k < arr.length - 1; k++) {
+		for (int k = 1; k < arr.length; k++) {
 			int temp = arr[k];
 			int j = k - 1;
 			while (j >= 0 && temp <= arr[j]) {
